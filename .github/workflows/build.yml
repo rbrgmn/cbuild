@@ -22,5 +22,5 @@ jobs:
           gcc -Wall -Wextra -O2 -o app.out *.c
 
       - name: Run (optional)
-        run: ./app  
+        run: ./app.out 
 
