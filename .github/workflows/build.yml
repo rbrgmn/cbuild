@@ -8,7 +8,10 @@ on:
 
 jobs:
   build:
-    runs-on: ghcr.io/rbrgmn/c-build:latest
+    runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/rbrgmn/c-build:latest
 
     steps:
       - name: Checkout code
