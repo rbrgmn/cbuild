@@ -1,0 +1,26 @@
+name: Build C Project
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      - name: Build
+        run: |
+          gcc -Wall -Wextra -O2 -o app.out *.c
+
+      - name: Run (optional)
+        run: ./app  
+
